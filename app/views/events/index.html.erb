@@ -2,6 +2,7 @@
 
 <% @events.each do |event| %>
     <div class="event">
-        <p><%= event.title %> <%= event.date.strftime("%d/%m/%Y") %></p>
+        <p><%= link_to event.title, event_path(event) %> <%= event.date.strftime("%d/%m/%Y") %></p>
     </div>
 <% end %>
+

@@ -15,4 +15,29 @@ class EventsController < ApplicationController
         redirect_to root_path
     end
 
+    def show
+        @event = Event.find(params[:id])
+    end
+
+    def destroy
+       @event = Event.find(params[:id])
+       
+       @event.destroy
+
+       redirect_to root_path
+    end
+
+    def edit
+        @event = Event.find(params[:id])
+    end
+
+    def update
+        @event = Event.find(params[:id])
+        
+        @event.update(params.require(:event).permit(:title, :date))
+
+        redirect_to event_path(@event)
+    end
+
 end
+
