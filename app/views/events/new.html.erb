@@ -1,0 +1,13 @@
+<h3>Add a new Event</h3>
+
+<%= simple_form_for @event do |f| %>
+  <p>
+    <%= f.input :title %>
+  </p>
+  <p>
+    <%= f.date_field :date %>
+  </p>
+  <p>
+    <%= f.submit "Save Event" %>
+</p>
+<% end %>

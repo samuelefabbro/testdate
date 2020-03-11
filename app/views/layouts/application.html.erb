@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Testdate</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+
+  <body>
+  
+  <section class="section">
+    <nav class="navbar">
+    <h4><%= link_to  "Events", root_path %></h4>
+    <h4><%= link_to  "Add Event", new_event_path %></h4>
+  </nav>
+
+    <div class="content">
+      <%= yield %>
+    </div>
+  </section>
+</body>
+</html>

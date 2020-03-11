@@ -1,0 +1,7 @@
+<h3>Events</h3>
+
+<% @events.each do |event| %>
+    <div class="event">
+        <p><%= event.title %> <%= event.date.strftime("%d/%m/%Y") %></p>
+    </div>
+<% end %>
