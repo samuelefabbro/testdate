@@ -10,13 +10,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_11_143652) do
+ActiveRecord::Schema.define(version: 2020_03_16_212915) do
+
+  create_table "clients", force: :cascade do |t|
+    t.string "name"
+    t.string "shortname"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "color"
+  end
 
   create_table "events", force: :cascade do |t|
     t.string "title"
     t.date "date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "time"
+    t.integer "price"
+    t.integer "expenses"
+    t.text "desctription"
+    t.integer "client_id"
+    t.index ["client_id"], name: "index_events_on_client_id"
   end
 
 end

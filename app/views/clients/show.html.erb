@@ -1,0 +1,10 @@
+<h2><%= @client.name %></h2>
+
+<h4 style="background-color: <%= @client.color %>"><%= @client.shortname %></h4>
+<p><%= simple_format @client.description %></p>
+
+
+<div class="actions">
+    <%= link_to  "Edit", edit_client_path(@client) %>
+    <%= link_to  "Delete this Client", client_path(@client), method: :delete, data: { confirm: "Are you sure?"} %>
+</div>

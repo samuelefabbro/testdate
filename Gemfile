@@ -35,6 +35,10 @@ gem 'jbuilder', '~> 2.5'
 
 gem "bulma-rails", "~> 0.8.0"
 gem 'simple_form'
+gem 'rails-i18n', '~> 5.1'
+gem 'jquery-rails'
+gem 'jquery-minicolors-rails'
+
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
@@ -48,6 +52,7 @@ group :development do
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '>= 3.0.5', '< 3.2'
+  gem 'rb-readline'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'

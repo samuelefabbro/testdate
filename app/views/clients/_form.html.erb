@@ -1,0 +1,18 @@
+<%= simple_form_for @client do |f| %>
+  <p>
+    <%= f.input :name %>
+  </p>
+  <p>
+    <%= f.input :shortname %>
+  </p>
+    <p>
+    <%= f.input :color, as: :minicolors, input_html: {data: {
+          minicolors: {swatches: ["#1230C4", "#EE432F"]}}} %>
+  </p>
+  <p>
+    <%= f.input :description %>
+  </p>
+  <p>
+    <%= f.submit "Save Client" %>
+</p>
+<% end %>

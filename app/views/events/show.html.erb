@@ -1,5 +1,15 @@
+<h2><%= l @event.date, :format => :long %></h2>
+<h2><%#= l @event.date, :format => :first %></h2>
+<h2><%#= l @event.date, :format => :second %></h2>
 <h1><%= @event.title %></h1>
-<h2><%= @event.date %></h2>
+<p>Cliente: <%= @event.client.shortname %></p>
+<p style="background-color: <%= @event.client.color %>"><%= @event.client.shortname %></p>
+<p>Ora: <%= @event.time %></p>
+<p>Prezzo: <%= @event.price %></p>
+<p>Spese: <%= @event.expenses %></p>
+<p>Descrizione: <%= simple_format @event.desctription %></p>
+
+
 
 <div class="actions">
     <%= link_to  "Edit", edit_event_path(@event) %>

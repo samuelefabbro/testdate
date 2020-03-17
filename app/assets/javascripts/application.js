@@ -13,4 +13,13 @@
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks
+
+//= require jquery3
+//= require jquery_ujs
+//= require jquery.minicolors
+//= require jquery.minicolors.simple_form
+
 //= require_tree .
+
+
+
