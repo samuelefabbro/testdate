@@ -1,18 +1,50 @@
 <%= simple_form_for @client do |f| %>
-  <p>
-    <%= f.input :name %>
-  </p>
-  <p>
-    <%= f.input :shortname %>
-  </p>
-    <p>
-    <%= f.input :color, as: :minicolors, input_html: {data: {
-          minicolors: {swatches: ["#1230C4", "#EE432F"]}}} %>
-  </p>
-  <p>
-    <%= f.input :description %>
-  </p>
-  <p>
-    <%= f.submit "Save Client" %>
-</p>
+
+<% if @client.errors.any? %>
+      <div class="errors">
+
+        <% @client.errors.full_messages.each do |message| %>
+          <p><%= message %></p>
+        <% end %>
+
+      </div>
+
+<% end %>
+
+
+<div class="columns is-centered">
+    <div class="column is-half">
+
+      <div class="field">
+        <div class="control">
+          <%= f.input :name, input_html: { class: "input"}, wrapper: false, label_html: { class: "label" } %>
+        </div>
+      </div>
+
+      <div class="field">
+        <div class="control">
+          <%= f.input :shortname, input_html: { class: "input"}, wrapper: false, label_html: { class: "label" } %>
+        </div>
+      </div>
+
+
+      <div class="field">
+        <div class="control">
+          <%= f.input :color, as: :minicolors, input_html: {data: {minicolors: {swatches: ["#1230C4", "#EE432F"]}}, class: "input"}, wrapper: false, label_html: { class: "label" } %>
+        </div>
+      </div>
+
+      <div class="field">
+        <div class="control">
+          <%= f.input :description, input_html: { class: "textarea"}, wrapper: false, label_html: { class: "label" } %>
+        </div>
+      </div>
+      <div class="field">
+        <div class="control">
+          <%= f.button :submit, class:"button is-primary" %> 
+        </div>
+      </div>
+    
+    </div>
+  </div>
 <% end %>

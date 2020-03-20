@@ -1,5 +1,16 @@
 <%= simple_form_for @event, html: { multipart: true } do |f| %>
  
+  <% if @event.errors.any? %>
+      <div class="errors">
+
+        <% @event.errors.full_messages.each do |message| %>
+          <p><%= message %></p>
+        <% end %>
+
+      </div>
+
+  <% end %>
+
   <div class="columns is-centered">
     <div class="column is-half">
 
@@ -47,9 +58,4 @@
     </div>
   </div>
 
-  
-
-  <p>
-    
-</p>
 <% end %>

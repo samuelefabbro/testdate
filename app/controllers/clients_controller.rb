@@ -10,9 +10,12 @@ class ClientsController < ApplicationController
     def create
         @client = Client.new(form_params)
 
-        @client.save
+        if @client.save
+            redirect_to clients_path
+        else
+            render "new"
+        end
 
-        redirect_to client_path(@client)
     end
 
     def show
@@ -34,9 +37,16 @@ class ClientsController < ApplicationController
     def update
         @client = Client.find(params[:id])
         
-        @client.update(form_params)
+        if @client.update(form_params)
 
-        redirect_to client_path(@client)
+            redirect_to clients_path
+        
+        else    
+            render "edit"
+        end
+        
+
+        
     end
 
     def form_params

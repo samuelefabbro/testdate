@@ -10,9 +10,12 @@ class EventsController < ApplicationController
     def create
         @event = Event.new(form_params)
 
-        @event.save
+        if @event.save
+            redirect_to event_path(@event)
+        else
+            render "new"
+        end
 
-        redirect_to event_path(@event)
     end
 
     def show
@@ -34,9 +37,12 @@ class EventsController < ApplicationController
     def update
         @event = Event.find(params[:id])
         
-        @event.update(form_params)
+        if @event.update(form_params)
 
-        redirect_to event_path(@event)
+            redirect_to event_path(@event)
+        else
+            render "edit"
+        end
     end
 
     def form_params
